@@ -67,22 +67,3 @@ Section: 插件
 Description: 这是一款加强控制中心3x2/4x2播放器美化的插件
 Name: cc播放器
 Author: 夜辰
-
-Package: com.Axs.kongzhidiy
-Architecture: iphoneos-arm64
-Version: 2.3.3-end
-Maintainer: binglan
-Installed-Size: 3028
-Depends: mobilesubstrate, firmware (>= 15.0)
-Filename: debs/控制中心_2.3.3-end_无根.deb
-Size: 674364
-MD5sum: cc92bdca7e88e8a32e22cb5d98d7a167
-SHA1: bb631421a4076a10dd762a88e18f256e5162ce10
-SHA256: feba6adaba1c31174609e389358eb087a332795fb015165fb3ff9f6c0bae29ac
-SHA512: 96f116469e09abe5904784cf4fecc3ee199132b098b95224cff4caa6c8f32bb1bbaa34ef7571a3002540aef1901b06b4ce337662c2b918f70a1ac412da22f3f3
-Section: 插件
-Description: 这是一个简单的控制中心美化插件。
-Name:  控制中心美化
-Author: binglan
-Icon: https://axs66.github.io/pro/icon/kongzhidiy.png
-Sileodepiction: https://axs66.github.io/pro/sileodepiction/kongzhidiy/js.json
