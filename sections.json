@@ -3,6 +3,18 @@
     {
       "name": "抖音",
       "orig": "",
+      "pkgs": [
+        "com.siwenjiajia.tweak"
+      ]
+    },
+    {
+      "name": "插件",
+      "orig": "",
+      "pkgs": []
+    },
+    {
+      "name": "美化",
+      "orig": "",
       "pkgs": []
     }
   ]
