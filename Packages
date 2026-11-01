@@ -1,3 +1,20 @@
+Package: com.siwenjiajia.tweak
+Architecture: iphoneos-arm64
+Version: 28.54-1
+Maintainer: siwenjiajia
+Installed-Size: 10840
+Depends: firmware (>= 14.0), mobilesubstrate | org.coolstar.libhooker | ellekit
+Filename: debs/抖音优化_28.54.deb
+Size: 4332648
+MD5sum: 10f89fc2636cc8bfcfd8117baaf72e0a
+SHA1: 6fc4b0c79977a7d4104be957e5b40fb70ea9be90
+SHA256: b1858f00ee51a9d5ea8c202abb533b6d21251b6ffd9d2880825174d0e427012a
+SHA512: 92b1f58972647cbeffa925795b34279877b719c023658cc605b3f09ac54e92edd523ea21f8517e27b7c59fce21908088690d997be5a7d5d29c7cb764fa076ce7
+Section: 抖音
+Description: 抖音优化插件
+Name: 抖音优化
+Author: siwenjiajia
+
 Package: com.charlieleung.liquidify
 Architecture: iphoneos-arm64
 Version: 1.3.7-4+dao88.1
@@ -50,20 +67,3 @@ Section: 插件
 Description: 这是一款加强控制中心3x2/4x2播放器美化的插件
 Name: cc播放器
 Author: 夜辰
-
-Package: com.siwenjiajia.tweak
-Architecture: iphoneos-arm64
-Version: 28.54-1
-Maintainer: siwenjiajia
-Installed-Size: 10840
-Depends: firmware (>= 14.0), mobilesubstrate | org.coolstar.libhooker | ellekit
-Filename: debs/抖音优化_28.54.deb
-Size: 4332648
-MD5sum: 10f89fc2636cc8bfcfd8117baaf72e0a
-SHA1: 6fc4b0c79977a7d4104be957e5b40fb70ea9be90
-SHA256: b1858f00ee51a9d5ea8c202abb533b6d21251b6ffd9d2880825174d0e427012a
-SHA512: 92b1f58972647cbeffa925795b34279877b719c023658cc605b3f09ac54e92edd523ea21f8517e27b7c59fce21908088690d997be5a7d5d29c7cb764fa076ce7
-Section: 插件
-Description: 抖音优化插件
-Name: 抖音优化
-Author: siwenjiajia
