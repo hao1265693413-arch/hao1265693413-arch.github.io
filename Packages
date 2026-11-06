@@ -32,6 +32,24 @@ Description: 液态玻璃
 Name: 88液态玻璃插件 1.3.7-4
 Author: 一刀
 
+Package: com.ahao.desktopicon
+Architecture: iphoneos-arm64
+Version: 1.2.9
+Maintainer: AHao
+Installed-Size: 604
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Filename: debs/com.ahao.desktopicon_1.2.9_iphoneos-arm64.deb
+Size: 137516
+MD5sum: f8a04e24af1f50ceb9798791517b481f
+SHA1: f0cdd5658ab69242387611f0717366a51bb0fed6
+SHA256: 6eee675f44574680bfafdb4fd741bea0167fcefb7c4213f3b7c83290748f1983
+SHA512: 731081ce5dd011a8bc785167729e99b6902e9f4d3728b51ec4d4c598daefb8e9a25949355d1d718b94b9b73cc25e6adf961461b90e0ec700fa1355753d1e350c
+Section: 插件
+Description: 通过设置面板为任意应用设置自定义桌面图标；不修改应用本身，支持一键恢复与注销生效。
+Name: 阿豪的桌面图标
+Author: AHao
+SileoDepiction:
+
 Package: com.axs.ios16dao
 Architecture: iphoneos-arm64
 Version: 5.2.0-205
