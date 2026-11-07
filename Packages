@@ -43,10 +43,12 @@ Size: 137516
 MD5sum: f8a04e24af1f50ceb9798791517b481f
 SHA1: f0cdd5658ab69242387611f0717366a51bb0fed6
 SHA256: 6eee675f44574680bfafdb4fd741bea0167fcefb7c4213f3b7c83290748f1983
+SHA512: 731081ce5dd011a8bc785167729e99b6902e9f4d3728b51ec4d4c598daefb8e9a25949355d1d718b94b9b73cc25e6adf961461b90e0ec700fa1355753d1e350c
 Section: 插件
-Description: 只替换 App 图标中的图片内容，不改变苹果原生图标的尺寸、圆角、位置和点击区域；支持随时恢复原图标。
+Description: 通过设置面板为任意应用设置自定义桌面图标；不修改应用本身，支持一键恢复与注销生效。
 Name: 阿豪的桌面图标
 Author: AHao
+SileoDepiction:
 
 Package: com.axs.ios16dao
 Architecture: iphoneos-arm64
@@ -83,4 +85,3 @@ Section: 插件
 Description: 这是一款加强控制中心3x2/4x2播放器美化的插件
 Name: cc播放器
 Author: 夜辰
-
