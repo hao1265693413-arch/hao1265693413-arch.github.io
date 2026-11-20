@@ -9,8 +9,8 @@ Description: 豪 hao
 Support: https://hao1265693413-arch.github.io/
 Icon: https://hao1265693413-arch.github.io/CydiaIcon.png
 MD5Sum:
- 3c1250b11d969e93a231b8fcf377dc83  3527 Packages
- 3424fd50b018c46d5781cb6be07e20c8  1928 Packages.gz
+ 6e242804683e5b5457cbef8ae37c0f24  3527 Packages
+ dfd2d832b345639ec76b7062d8fcef91  1916 Packages.gz
 SHA256:
- da1326c0ab2ef3b185851414f788bf924858dd41f10ae85a02302dc2c7cc78bc  3527 Packages
- 01b869548b00f54c573f2456870d5b224049a71af1ed457ff7bf9539be2f299e  1928 Packages.gz
+ a44bf0b0c7b5675bbd8d943374641d63b01f96400857bdba2e7d099a1cc1fda2  3527 Packages
+ ea9a5749883dae6cd66e211541d0b2b9c2b0954f3296d67fc77b18076d08e70f  1916 Packages.gz
