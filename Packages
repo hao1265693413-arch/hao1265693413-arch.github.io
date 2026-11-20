@@ -34,16 +34,16 @@ Author: 一刀
 
 Package: com.ahao.desktopicon
 Architecture: iphoneos-arm64
-Version: 1.7.5
+Version: 1.8.1
 Maintainer: AHao
-Installed-Size: 652
+Installed-Size: 668
 Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
-Filename: debs/com.ahao.desktopicon_1.7.5_iphoneos-arm64.deb
-Size: 178100
-MD5sum: a086c5baca40af3e256e7b8ac597001e
-SHA1: 68cfff46b40e088ee7ec45d9e83ab6b4754232ce
-SHA256: dc192a7a71f59da428809928063c190c386e9bab79532e08e886b350c34f3d9b
-SHA512: abe7cf35c6f83538788e0df8884c00977597ffbe4442f7cd8b70b204b5a0c4de87924401accacac3f4f0fb5119b528715f7011758b5c29f8a76faff7cc2120e8
+Filename: debs/com.ahao.desktopicon_1.8.1_iphoneos-arm64.deb
+Size: 183088
+MD5sum: 19bd7cae7585a26eee793d16df33d645
+SHA1: 9342e99eaa7a7dde194afdf4b8c61e5523b456f1
+SHA256: d49226746de960a03cc1772416a0b8690081131a6313382345343adafc85d019
+SHA512: 1fa3ffff30379908b7c9097a234230882a87a864a01fca5b6479f093556410c55f9e0451a92fd2bdfe1d20dba8f8d19b8a47170758d209cbcedecf44514c51b7
 Section: 插件
 Description: 通过设置面板为任意应用设置自定义桌面图标；不修改应用本身，支持一键恢复与注销生效。
 Name: 阿豪的桌面图标

@@ -86,7 +86,22 @@ for p in pkgs:
 # 输出：包按分类顺序展开，同一包属于多个分类就出现多条
 out=[]; multi=0
 bypkg={}
-for p in pkgs: bypkg.setdefault(p['pkg'],p)
+# 同一插件保留 Debian 版本号最高的一条，不能依赖文件扫描顺序取第一条。
+import subprocess
+def package_version(entry):
+    return next((line.split(':',1)[1].strip() for line in entry['block'].splitlines()
+                 if line.startswith('Version:')), '0')
+for p in pkgs:
+    previous=bypkg.get(p['pkg'])
+    if previous is None:
+        bypkg[p['pkg']]=p
+        continue
+    comparison=subprocess.run(['dpkg','--compare-versions',package_version(p),
+                               'gt',package_version(previous)],check=False).returncode
+    if comparison not in (0,1):
+        raise RuntimeError('无法比较插件版本: '+str(p['pkg']))
+    if comparison==0:
+        bypkg[p['pkg']]=p
 done_names=set()
 emitted=set()   # 已写出的包名，保证每个包只出现一次
 for s in sections:
