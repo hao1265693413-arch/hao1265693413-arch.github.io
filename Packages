@@ -67,6 +67,23 @@ Description: 游戏中显示时间和本机电量，可调透明度、游戏内�
 Name: 豪の游戏助手
 Author: AHao
 
+Package: com.ahao.gamebattery
+Architecture: iphoneos-arm64e
+Version: 0.2.0~test8
+Maintainer: AHao
+Installed-Size: 604
+Depends: mobilesubstrate, preferenceloader, firmware (>= 16.0)
+Filename: debs/com.ahao.gamebattery_0.2.0~test8_iphoneos-arm64e.deb
+Size: 165134
+MD5sum: 46b7d369c60c2dbfeb56bf1859f9163d
+SHA1: 649fd5bac45f404cd36c804a36210b23e7b0c9a6
+SHA256: e01c80749ad0621e9798d34733e4d4e241a7b960286d6220dd4750d608e48d52
+SHA512: 62286ce2f2fd4d460ceb75ff15c053489c0a653e41efa98b883645a8801dd3651499de34c0d98dcf811382921bdbe9ab894dc2570bca881a89d7c94a52706033
+Section: 插件
+Description: 游戏中显示时间和本机电量，可调透明度、游戏内按住浮窗直接拖动并自动锁定，锁定时完全触摸穿透。支持隐根与无根，iOS 16。
+Name: 豪の游戏助手
+Author: AHao
+
 Package: com.axs.ios16dao
 Architecture: iphoneos-arm64
 Version: 5.2.0-205
