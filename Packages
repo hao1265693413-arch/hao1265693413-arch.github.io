@@ -50,6 +50,23 @@ Name: 豪の桌面
 Author: AHao
 SileoDepiction:
 
+Package: com.ahao.gamebattery
+Architecture: iphoneos-arm64
+Version: 0.2.0~test8
+Maintainer: AHao
+Installed-Size: 604
+Depends: mobilesubstrate, preferenceloader, firmware (>= 16.0)
+Filename: debs/com.ahao.gamebattery_0.2.0~test8_iphoneos-arm64.deb
+Size: 165264
+MD5sum: 581f7db877e8864abe9081b7d76897c0
+SHA1: f1bec4a9d8510a0ac2b6c5ae95a0e446f1b753fa
+SHA256: dfc1d7b8e5a814229465fb5d2a74c34511a3e58546426105564fe767ee457314
+SHA512: 657872236965fd88af426c9d87e9aeeba572bfd009f18825b351581ac585d3422e081ae7a0712427e0e0971e98d1fe4d9f9eb5b0395046fa37626da0758b4c79
+Section: 插件
+Description: 游戏中显示时间和本机电量，可调透明度、游戏内按住浮窗直接拖动并自动锁定，锁定时完全触摸穿透。支持隐根与无根，iOS 16。
+Name: 豪の游戏助手
+Author: AHao
+
 Package: com.axs.ios16dao
 Architecture: iphoneos-arm64
 Version: 5.2.0-205
