@@ -88,50 +88,62 @@ out=[]; multi=0
 bypkg={}
 # 同一插件保留 Debian 版本号最高的一条，不能依赖文件扫描顺序取第一条。
 import subprocess
-def package_version(entry):
+def field(entry,name,default=''):
     return next((line.split(':',1)[1].strip() for line in entry['block'].splitlines()
-                 if line.startswith('Version:')), '0')
+                 if line.startswith(name+':')), default)
+def package_version(entry):
+    return field(entry,'Version','0')
+def package_arch(entry):
+    return field(entry,'Architecture','')
+# 关键：按「包名 + 架构」分组。同一包名可以同时存在 iphoneos-arm64（无根）
+# 与 iphoneos-arm64e（隐根）两条，设备会按自身架构各取所需；只按包名去重
+# 会把其中一条整个吞掉，无根/隐根用户就有一半装不上。
+byarch={}
 for p in pkgs:
-    previous=bypkg.get(p['pkg'])
+    key=(p['pkg'],package_arch(p))
+    previous=bypkg.get(key)
     if previous is None:
-        bypkg[p['pkg']]=p
-        continue
-    comparison=subprocess.run(['dpkg','--compare-versions',package_version(p),
-                               'gt',package_version(previous)],check=False).returncode
-    if comparison not in (0,1):
-        raise RuntimeError('无法比较插件版本: '+str(p['pkg']))
-    if comparison==0:
-        bypkg[p['pkg']]=p
-done_names=set()
-emitted=set()   # 已写出的包名，保证每个包只出现一次
-for s in sections:
-    if s['name'] in done_names: continue   # 同名分类已经合并输出过
-    done_names.add(s['name'])
-    # 同一包名在 Packages 里可能出现多次（历史重复数据），这里按包名去重，避免写出重复段落
-    for name in dict.fromkeys(p['pkg'] for p in pkgs if p['pkg'] in members[s['name']]):
-        if name in emitted: continue
-        emitted.add(name)
-        src=bypkg.get(name)
-        if not src: continue
+        bypkg[key]=p
+    else:
+        comparison=subprocess.run(['dpkg','--compare-versions',package_version(p),
+                                   'gt',package_version(previous)],check=False).returncode
+        if comparison not in (0,1):
+            raise RuntimeError('无法比较插件版本: '+str(p['pkg']))
+        if comparison==0:
+            bypkg[key]=p
+    lst=byarch.setdefault(p['pkg'],[])
+    if package_arch(p) not in [package_arch(x) for x in lst]:
+        lst.append(p)
+def entries_for(name):
+    order=[]
+    for p in byarch.get(name,[]):
+        a=package_arch(p)
+        if a not in order: order.append(a)
+    return [bypkg[(name,a)] for a in order]
+def emit(name,section):
+    global multi
+    for src in entries_for(name):
         lines=[l for l in src['block'].split(NL) if not l.startswith('Section:')]
         # Section 放在 Description 之前，和 apt-ftparchive 的输出顺序一致
         at=len(lines)
         for i,l in enumerate(lines):
             if l.startswith('Description:'): at=i; break
-        lines.insert(at,'Section: '+s['name'])
+        lines.insert(at,'Section: '+section)
         out.append(NL.join(lines)); multi+=1
+done_names=set()
+emitted=set()   # 已写出的包名，保证每个包只出现一次（各架构一起写）
+for s in sections:
+    if s['name'] in done_names: continue   # 同名分类已经合并输出过
+    done_names.add(s['name'])
+    for name in dict.fromkeys(p['pkg'] for p in pkgs if p['pkg'] in members[s['name']]):
+        if name in emitted: continue
+        emitted.add(name)
+        emit(name,s['name'])
 for name in dict.fromkeys(p['pkg'] for p in pkgs if p['pkg'] in rest):
     if name in emitted: continue
     emitted.add(name)
-    src=bypkg.get(name)
-    if not src: continue
-    lines=[l for l in src['block'].split(NL) if not l.startswith('Section:')]
-    at=len(lines)
-    for i,l in enumerate(lines):
-        if l.startswith('Description:'): at=i; break
     # 没被任何分类收走的包统一进「插件」（默认兜底分类）
-    lines.insert(at,'Section: '+OTHER_OUT)
-    out.append(NL.join(lines)); multi+=1
+    emit(name,OTHER_OUT)
 
 total=len(set(p['pkg'] for p in pkgs))
 # 硬规则：结果里只允许出现配置内的分类名，「～其它」这类历史遗留分区一律不许写出去。
